@@ -67,7 +67,7 @@ for index in 1...5 {
     print("\(index) по 5 е \(index * 5)")
 }
 
-let names = ["Боян", "Драго", "Емил", "Петко", "Спас"]
+let names = [ "Спас", "Боян", "Драго", "Емил", "Петко"]
 for (index,name) in names.enumerated() {
     print("\(index + 1). Здравей, \(name)!")
 }
@@ -208,6 +208,10 @@ class Media {
 }
 
 
+class NewsMedia: Media {
+    
+}
+
 let m = Media(name: "Филм 1", sizeInBytes: 100000)
 
 print("Media = \(m.name)")
@@ -216,3 +220,75 @@ print("Media = \(m.name)")
 
 // Класове да довършим
 
+let nm = NewsMedia(name: "NY", sizeInBytes: 0.0)
+print(nm.name)
+
+
+//let names = ["aaa", "ccc", "bbb"]
+//сортиране
+
+//let sortedNames = names.sorted(by: { first, second in
+//    return first < second
+//})
+
+//let sortedNames = names.sorted() { first, second in
+//    return first < second
+//}
+
+//let sortedNames = names.sorted { first, second in
+//    first < second
+//}
+
+
+//let sortedNames = names.sorted { $0 < $1 }
+var orderBy: (String, String) -> Bool = { [weak nm] (a: String, b: String) -> Bool in
+    print(nm)
+    return a < b
+}
+
+orderBy = {(a: String, b: String) -> Bool in
+    return a > b
+}
+let sortedNames = names.sorted(by: orderBy)
+
+print(sortedNames)
+
+var functionRef: ((Int) -> Bool)? = nil
+
+@MainActor func f(operation: @escaping (Int) -> Bool) {
+    functionRef = operation
+}
+
+//let names2: Array<String> = ["aaa", "ccc", "bbb"]
+//let names2Short: [String]  = ["aaa", "ccc", "bbb"]
+//let numbers: Array<Int> = [1, 2, 3]
+
+
+//print(names.sorted(by: { $0 > $1 }))
+//print(names.sorted() { $0 > $1 })
+////сортираме, като подаваме функция от тип (String, String) -> Bool ( т.е. оператор за сравнение)
+//print(names.sorted(by: >))
+
+class Person {
+    var name: String
+    var age: Int
+    
+    init(name: String = "demo", age: Int = 100) {
+        self.name = name
+        self.age = age
+    }
+}
+
+var joker = Person(name: "Joker", age: 30)
+//let kp = \Person.name
+joker[keyPath: \.self] = Person(name: "The Joker", age: 30)
+print(joker[keyPath: \.name]) // отпечатва "The Joker"
+//print(joker[keyPath: kp]) // отпечатва "The Joker"
+
+
+let people = [Person(name: "The Joker", age: 30), Person(name: "The Batman", age: 30)]
+
+print(people.map({ p in
+    p.age
+}))
+print(people.map(\.age))

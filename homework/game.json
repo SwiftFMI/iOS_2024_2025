@@ -1,0 +1,42 @@
+{
+    "title": "Пътеществията на Мики Маус в магическата гора",
+    "description": "",
+    "chapters": [
+        {
+            "id": "start",
+            "type":"start",
+            "text": "Описание на главата",
+            "actions": [
+                "goLeft",
+                "run",
+                "wakeUp"
+            ]
+        },
+        {
+            "id": "goLeft",
+            "type":"intermediate",
+            "text": "Описание на главата",
+            "actions": [
+                "run",
+                "wakeUp"
+            ]
+        },
+        {
+            "id": "run",
+            "type":"success",
+            "text": "Описание на главата",
+            "actions": [
+                "again"
+            ]
+        },
+        {
+            "id": "wakeUp",
+            "type":"failure",
+            "text": "Описание на главата",
+            "actions": [
+                "again"
+            ]
+        }
+    ]
+
+}

@@ -1,0 +1,24 @@
+{
+  "originHash" : "6c47c119baf1798b2f680e04470b5734809cee093f423d990f4f49fc01f241ad",
+  "pins" : [
+    {
+      "identity" : "bubbletransition",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/andreamazz/BubbleTransition",
+      "state" : {
+        "revision" : "310bb9f69a3a471f68db8f3ca984686bcfa28dda",
+        "version" : "4.1.0"
+      }
+    },
+    {
+      "identity" : "debugswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DebugSwift/DebugSwift.git",
+      "state" : {
+        "revision" : "e2e24a76141532bf750be66d65eaec564168d948",
+        "version" : "0.3.6"
+      }
+    }
+  ],
+  "version" : 3
+}
