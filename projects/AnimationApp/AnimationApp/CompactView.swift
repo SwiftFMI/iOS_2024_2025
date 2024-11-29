@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct CompactView: View {
+    var animationNS: Namespace.ID
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: 200, height: 50)
+                .matchedGeometryEffect(id: "card", in: animationNS)
+            Button("test") {
+                
+            }.matchedGeometryEffect(id: "button", in: animationNS)
+        }
+        
     }
 }
 
-#Preview {
-    CompactView()
-}
+//#Preview {
+//    CompactView()
+//}
