@@ -89,6 +89,12 @@
 1. `CoreData` & `SwiftData`
 1. UITesting
 
+## Практически изпит (midterm)
+
+Използвайте следния инструмент, за да свалите заданието според [варианта си](https://github.com/SwiftFMI/iOS_2024_2025/tree/main/exam).
+https://download-directory.github.io/
+
+
 
 ## Финални проекти
 
