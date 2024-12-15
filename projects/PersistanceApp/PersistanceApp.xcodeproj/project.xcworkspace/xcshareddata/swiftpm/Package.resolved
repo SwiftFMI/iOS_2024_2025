@@ -1,0 +1,24 @@
+{
+  "originHash" : "a1898d71fc52ae85f983d4b584261d9a8dd5f1fe71d599908a3e8fba085854a2",
+  "pins" : [
+    {
+      "identity" : "debugswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DebugSwift/DebugSwift.git",
+      "state" : {
+        "revision" : "92b686633817c7001e0c8e58d2c42ca74e247c6c",
+        "version" : "0.3.8"
+      }
+    },
+    {
+      "identity" : "keychainstored",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/owowagency/KeychainStored",
+      "state" : {
+        "revision" : "a5a1fccec6fe279fc244e37a7190c92ec15bf456",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}
