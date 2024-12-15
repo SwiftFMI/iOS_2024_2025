@@ -8,8 +8,36 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var username = ""
+    @State var password = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                HStack {
+                    Text("Username:")
+                    TextField(text: $username) {
+                        Text("your@email.com")
+                    }
+                }
+                HStack {
+                    Text("Password:")
+                    SecureField(text: $password) {
+                        Text("password")
+                    }
+                    
+                }
+                Button {
+                    print("Try to login!")
+                } label: {
+                    Text("Login")
+                }
+                WebView(url: URL(string: "http://google.com")!)
+                    .frame(width: 500, height: 500)
+                
+            }
+            .padding()
+        }
     }
 }
 

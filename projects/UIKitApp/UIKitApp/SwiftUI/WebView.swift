@@ -6,13 +6,25 @@
 //
 
 import SwiftUI
+import WebKit
 
-struct WebView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct WebView: UIViewRepresentable {
+    var url: URL
+    init(url: URL) {
+        self.url = url
+    }
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        // nothing
+    }
+    
+    func makeUIView(context: Context) -> some UIView {
+        let webView = WKWebView()
+        
+            webView.load(URLRequest(url: url))
+        return webView
     }
 }
 
 #Preview {
-    WebView()
+    WebView(url: URL(string: "http://google.com")!)
 }
