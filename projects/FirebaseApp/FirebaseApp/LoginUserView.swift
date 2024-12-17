@@ -55,6 +55,15 @@ struct LoginUserView: View {
                     Text("Login!")
                 }
                 .disabled(disableLogin)
+                
+                Button {
+                    Task {
+                        await viewModel.fetchJSON()
+                    }
+                } label: {
+                    Text("Fetch!")
+                }
+                
                 if !userId.isEmpty {
                     PhotosPicker("Select avatar", selection: $avatarItem, matching: .images)
                     Button {

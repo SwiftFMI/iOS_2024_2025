@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "DE476AC6-1B60-4465-B6C5-E7D2F709E684",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FirebaseApp.xcodeproj",
+      "identifier" : "9E652A912D0364FC0044CB42",
+      "name" : "FirebaseApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:FirebaseApp.xcodeproj",
+        "identifier" : "9EB35D662D10947200B4F23E",
+        "name" : "FirebaseAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

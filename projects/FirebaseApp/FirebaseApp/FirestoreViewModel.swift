@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseStorage
+import Alamofire
 
 class FirestoreViewModel: ObservableObject {
     @Published var items = [String]()
@@ -112,8 +113,27 @@ class FirestoreViewModel: ObservableObject {
         }
         
         let observer = uploadTask?.observe(.progress) { snapshot in
-          // A progress event occured
+          // A progress event occurred
             progress?(snapshot)
+        }
+    }
+    
+    func fetchJSON() async {
+//        guard let url = URL(string: "https://httpbin.org/get") else {
+//            print("invalid url!")
+//            return
+//        }
+//        let request = URLRequest(url: url)
+        let response = await AF.request("https://httpbin.org/get", interceptor: .retryPolicy) //.request(request)
+            .validate()
+            .serializingDecodable(ResponseType.self)
+            .response
+        
+        switch response.result {
+        case .success( let data):
+            print("Data: \(data)")
+        case let .failure(error):
+            print("error: \(error)")
         }
     }
 }
@@ -122,4 +142,15 @@ extension String: @retroactive Identifiable {
     public var id: String {
         self
     }
+}
+
+struct Arguments: Codable {
+    
+}
+
+struct ResponseType: Codable {
+    let args: Arguments
+    let headers: [String: String]
+    let origin: String
+    let url: String
 }
